@@ -3,8 +3,8 @@ const app = express();
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter")
 
-//STATIC ASSETS
-// express.static is a middleware function enabling use of static assets
+//Static assets
+//express.static is a middleware function enabling use of static assets
 //we tell this function to look for these assets in the public folder
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
@@ -13,6 +13,7 @@ app.use(express.static(assetsPath));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+//routers
 app.use("/", indexRouter)
 
 
