@@ -9,6 +9,10 @@ const indexRouter = require("./routes/indexRouter")
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
+//this allows the app to parse form data into req.body
+app.use(express.urlencoded({ extended: true }));
+
+
 //lets our app know where to look for views, and then that we intend to use EJS as a template engine
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
