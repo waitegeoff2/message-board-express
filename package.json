@@ -1,0 +1,24 @@
+{
+  "name": "message-board-express",
+  "version": "1.0.0",
+  "description": "Making a simple message board app using Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waitegeoff2/message-board-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/waitegeoff2/message-board-express/issues"
+  },
+  "homepage": "https://github.com/waitegeoff2/message-board-express#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
