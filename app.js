@@ -14,5 +14,5 @@ app.set("view engine", "ejs");
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`EJS Express app - listening on port ${PORT}!`);
+  console.log(`Message Board Express app - listening on port ${PORT}!`);
 });
