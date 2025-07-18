@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>G's Message Board</title>
+    </head>
+    <body>
+       <h2><%= title %></h2>
+       <ul>
+        <% messages.forEach((message) => { %>
+            <li>
+                <span>User: <%= message.user %></span>
+                <br>
+                <span>Message: <%= message.text %></span>
+                <br>
+                <span>Date sent: <%= message.added %></span>
+            </li>
+        <% }) %>
+       </ul>
+    </body>
+</html>
