@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const indexRouter = Router();
+let iDCount = 4;
 
 const messages = [
     {
@@ -31,8 +32,14 @@ indexRouter.get('/new', (req, res) => {
     res.render("form")
 })
 
-indexRouter.get('/message', (req, res) => {
-    res.render("message")
+indexRouter.get('/messages/:messageId', (req, res) => {
+    const thisMessageId = req.params.messageId;
+    //find that message id in here and render it
+    const message = messages.filter((message) => (message.id == thisMessageId))
+    console.log(message)
+    res.render("message", { message: message })
+
+    // res.render("message")
 })
 
 indexRouter.post('/new', (req, res) => {
@@ -40,8 +47,10 @@ indexRouter.post('/new', (req, res) => {
     //as req.body.NAME OF INPUT
     const userName = req.body.userName;
     const messageText = req.body.message;
+    const messageId = iDCount++; 
 
-    messages.push({ text: messageText, user: userName, added: new Date() })
+    messages.push({ text: messageText, user: userName, added: new Date(), id: messageId })
+    console.log(messages)
 
     res.redirect('/')
 })

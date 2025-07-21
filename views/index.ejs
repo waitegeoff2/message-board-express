@@ -12,9 +12,9 @@
                     <span><b>User:</b> <%= message.user %></span>
                     <span><b>Message:</b> <%= message.text %></span>
                     <span><b>Date sent:</b> <%= message.added %></span>
-                    <a href="/open"><b>See Message Details</b></a>
+                    <!-- HREF OPENS THAT MESSAGE ID -->
+                    <a href="/messages/<%= message.id %>"><b>See Message Details</b></a>
                 </div>
-                <!-- ADD OPEN BUTTON HERE: goes to new page, make a message TEMPLATE (INCLUDE here) and plug in above values -->
             </li>
         <% }) %>
        </ul>

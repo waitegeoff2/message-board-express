@@ -4,8 +4,14 @@
         <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
-        <h3>User: <%= messageUser %></h3>
-        <h3>Text: <%= messageText %></h3>
-        <h3>Time Sent: <% timeSent %></h3>
+        <div class="message-details">
+            <h2 class="details-title">Message Details</h2>
+            <div class="message-detail-box">
+                <p><b>User: </b> <%= message[0].user %></p>
+                <p><b>Text: </b> <%= message[0].text %></p>
+                <p><b>Time Sent: </b> <%= message[0].added %></p>
+            </div>
+            <a href="/"><b>Back to Message Board</b></a>  
+        </div>
     </body>
 </html>
