@@ -9,7 +9,7 @@ const indexRouter = require("./routes/indexRouter")
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-//this allows the app to parse form data into req.body
+//this allows the app to parse form data into req.
 app.use(express.urlencoded({ extended: true }));
 
 
