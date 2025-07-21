@@ -1,22 +1,23 @@
 <html>
     <head>
         <title>G's Message Board</title>
+        <link rel="stylesheet" href="/styles.css">
     </head>
     <body>
-       <h2><%= title %></h2>
-       <ul>
+       <h2 class="index-title"><%= title %></h2>
+       <ul class="message-list">
         <% messages.forEach((message) => { %>
             <li>
-                <span>User: <%= message.user %></span>
-                <br>
-                <span>Message: <%= message.text %></span>
-                <br>
-                <span>Date sent: <%= message.added %></span>
-                <br>
+                <div class="message-block">
+                    <span><b>User:</b> <%= message.user %></span>
+                    <span><b>Message:</b> <%= message.text %></span>
+                    <span><b>Date sent:</b> <%= message.added %></span>
+                    <a href="/open"><b>See Message Details</b></a>
+                </div>
                 <!-- ADD OPEN BUTTON HERE: goes to new page, make a message TEMPLATE (INCLUDE here) and plug in above values -->
             </li>
         <% }) %>
        </ul>
-       <a href="/new">New Message</a>
+       <a class="new-message-button" href="/new">New Message</a>
     </body>
 </html>

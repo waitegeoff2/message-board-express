@@ -5,17 +5,21 @@ const messages = [
     {
         text: "Hello dude",
         user: "Geoff",
-        added: new Date()
+        added: new Date(),
+        id: 1,
     },
     {
         text: "Hello man",
         user: "Jim",
-        added: new Date()
+        added: new Date(),
+        id: 2,
+
     },
     {
         text: "Hello there",
         user: "Jon",
-        added: new Date()
+        added: new Date(),
+        id: 3,
     },
 ]
 
@@ -25,6 +29,10 @@ indexRouter.get('/', (req, res) => {
 
 indexRouter.get('/new', (req, res) => {
     res.render("form")
+})
+
+indexRouter.get('/message', (req, res) => {
+    res.render("message")
 })
 
 indexRouter.post('/new', (req, res) => {
