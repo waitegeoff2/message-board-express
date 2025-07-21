@@ -24,24 +24,36 @@ const messages = [
     },
 ]
 
+//home page
 indexRouter.get('/', (req, res) => {
     res.render("index", { title: "Mini Messageboard", messages: messages })
 })
 
+//new message form
 indexRouter.get('/new', (req, res) => {
     res.render("form")
 })
 
-indexRouter.get('/messages/:messageId', (req, res) => {
-    const thisMessageId = req.params.messageId;
-    //find that message id in here and render it
-    const message = messages.filter((message) => (message.id == thisMessageId))
-    console.log(message)
-    res.render("message", { message: message })
-
-    // res.render("message")
+indexRouter.get('/404', (req, res) => {
+    res.render("404")
 })
 
+//display each message by id
+indexRouter.get('/messages/:messageId', (req, res) => {
+    const thisMessageId = req.params.messageId;
+    //find that message in here based on its id and then render it
+    const message = messages.filter((message) => ((message.id == thisMessageId)))
+
+    console.log(message)
+
+    if(message[0] == null) {
+        res.redirect('/404');
+    }
+
+    res.render("message", { message: message })
+})
+
+//post new message with form
 indexRouter.post('/new', (req, res) => {
     //the contents of your form, when posted here, will show up 
     //as req.body.NAME OF INPUT
@@ -50,12 +62,8 @@ indexRouter.post('/new', (req, res) => {
     const messageId = iDCount++; 
 
     messages.push({ text: messageText, user: userName, added: new Date(), id: messageId })
-    console.log(messages)
 
     res.redirect('/')
 })
 
 module.exports = indexRouter;
-
-// add routes for / and /new
-
