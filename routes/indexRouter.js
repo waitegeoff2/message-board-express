@@ -34,6 +34,7 @@ indexRouter.get('/new', (req, res) => {
     res.render("form")
 })
 
+//error page
 indexRouter.get('/404', (req, res) => {
     res.render("404")
 })
@@ -43,8 +44,6 @@ indexRouter.get('/messages/:messageId', (req, res) => {
     const thisMessageId = req.params.messageId;
     //find that message in here based on its id and then render it
     const message = messages.filter((message) => ((message.id == thisMessageId)))
-
-    console.log(message)
 
     if(message[0] == null) {
         res.redirect('/404');

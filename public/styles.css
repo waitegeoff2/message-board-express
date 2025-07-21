@@ -16,12 +16,15 @@ body {
     font-weight: bolds;
     text-shadow: 5px 5px 5px rgb(200, 200, 200);
     margin-bottom: 5px;
+    align-self: center;
 }
 
 .message-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-width: 400px;
+    align-self: center;
     list-style: none;
 }
 
@@ -45,6 +48,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
+    align-self: center;
 }
 
 
