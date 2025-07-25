@@ -9,7 +9,7 @@
         <% messages.forEach((message) => { %>
             <li>
                 <div class="message-block">
-                    <span><b>User:</b> <%= message.user %></span>
+                    <span><b>User:</b> <%= message.username %></span>
                     <span><b>Message:</b> <%= message.text %></span>
                     <span><b>Date sent:</b> <%= message.added %></span>
                     <a href="/messages/<%= message.id %>"><b>See Message Details</b></a>

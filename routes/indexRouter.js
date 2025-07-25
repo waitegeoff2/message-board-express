@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const indexRouter = Router();
 let iDCount = 4;
+const indexController = require('../controllers/indexController')
 
 const messages = [
     {
@@ -25,9 +26,7 @@ const messages = [
 ]
 
 //home page
-indexRouter.get('/', (req, res) => {
-    res.render("index", { title: "Mini Messageboard", messages: messages })
-})
+indexRouter.get('/', indexController.getMessages);
 
 //new message form
 indexRouter.get('/new', (req, res) => {
@@ -53,16 +52,6 @@ indexRouter.get('/messages/:messageId', (req, res) => {
 })
 
 //post new message with form
-indexRouter.post('/new', (req, res) => {
-    //the contents of your form, when posted here, will show up 
-    //as req.body.NAME OF INPUT
-    const userName = req.body.userName;
-    const messageText = req.body.message;
-    const messageId = iDCount++; 
-
-    messages.push({ text: messageText, user: userName, added: new Date(), id: messageId })
-
-    res.redirect('/')
-})
+indexRouter.post('/new', indexController.postMessage)
 
 module.exports = indexRouter;
