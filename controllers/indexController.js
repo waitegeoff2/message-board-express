@@ -17,7 +17,20 @@ async function postMessage(req, res) {
     res.redirect('/')
 }
 
+async function getMessageInfo(req, res) {
+    const thisMessageId = req.params.messageId;
+    //find that message in database and return it
+    const message = await db.findMessage(thisMessageId)
+
+    if(message[0] == null) {
+        res.redirect('/404');
+    }
+
+    res.render("message", { message: message })
+}
+
 module.exports = {
   getMessages,
-  postMessage
+  postMessage,
+  getMessageInfo
 };
