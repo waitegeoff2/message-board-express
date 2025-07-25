@@ -5,13 +5,13 @@ const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     text VARCHAR ( 255 ),
-    user VARCHAR ( 255 ),
-    added DATETIME DEFAULT GETDATE()
+    userName VARCHAR ( 255 ),
+    added TIMESTAMP DEFAULT NOW()
 );
 
-INSERT INTO messages (text, user)
+INSERT INTO messages (text, userName)
 VALUES
-('Hello dude', 'Geoff),
+('Hello dude', 'Geoff'),
 ('Hello man', 'Jim');
 `;
 

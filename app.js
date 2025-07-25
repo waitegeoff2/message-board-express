@@ -3,6 +3,8 @@ const app = express();
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter")
 require('dotenv').config();
+const pool = require("./db/pool");
+
 
 //Static assets
 //express.static is a middleware function enabling use of static assets
